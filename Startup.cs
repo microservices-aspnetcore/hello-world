@@ -13,11 +13,6 @@ namespace HelloWorld {
         {
             app.Use(async (context, next) =>
             {
-                await next.Invoke();
-            });
-
-            app.Run(async context =>
-            {
                 await context.Response.WriteAsync("Hello, world!");
             });
         }
