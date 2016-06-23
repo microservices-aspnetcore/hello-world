@@ -8,13 +8,13 @@ namespace StatlerWaldorfCorp.HelloWorld {
     {
         public Startup(IHostingEnvironment env)
         {
-        }        
+        }
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            app.Use(async (context, next) =>
+            app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello, world!");
             });
         }
-    }   
+    }
 }
