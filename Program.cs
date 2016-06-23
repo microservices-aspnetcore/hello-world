@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 
-namespace HelloWorld
+namespace StatlerWaldorfCorp.HelloWorld
 {
     public class Program
     {
