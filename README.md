@@ -1,4 +1,12 @@
+# Build Status
+
+## Wercker
+
 [![wercker status](https://app.wercker.com/status/ad82c3b8a3b39b2dcbfe76afb9363faa/m/ "wercker status")](https://app.wercker.com/project/byKey/ad82c3b8a3b39b2dcbfe76afb9363faa)
+
+## CircleCI
+
+[![CircleCI](https://circleci.com/gh/microservices-aspnetcore/hello-world.svg?style=svg)](https://circleci.com/gh/microservices-aspnetcore/hello-world)
 
 # Hello World
 
