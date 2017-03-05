@@ -9,6 +9,7 @@ compile:
   override:
     - dotnet restore
     - dotnet build    
+    - dotnet publish -o publish
 
 test:
   override:
