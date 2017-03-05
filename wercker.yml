@@ -3,6 +3,10 @@ no-response-timeout: 10
 build:
   steps: 
     - script:
+      name: versioncheck
+      code: |
+        dotnet --version
+    - script:
         name: restore
         code: |
           dotnet restore
