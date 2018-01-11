@@ -24,6 +24,8 @@ deploy:
     - internal/docker-push:
         username: $USERNAME
         password: $PASSWORD
-        repository: dotnetcoreservices/hello-world
-        registry: https://registry.hub.docker.com
+#        repository: dotnetcoreservices/hello-world
+#        registry: https://registry.hub.docker.com
+        registry: cloud.canister.io:5000
+        repository: autodidaddict/aspnetcoresvc-helloworld
         entrypoint: "/pipeline/source/app/docker_entrypoint.sh"
