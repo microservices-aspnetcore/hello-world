@@ -1,16 +1,21 @@
-machine:
-  pre:
-    - sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
-    - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
-    - sudo apt-get update
-    - sudo apt-get install dotnet-dev-1.0.0-rc4-004771
-
-compile: 
-  override:
-    - dotnet restore
-    - dotnet build    
-    - dotnet publish -o publish
-
-test:
-  override:
-    - echo "no tests"
+version: 2
+jobs:
+  build:
+    environment:
+      IMAGE_NAME: jonathancardoso/building-on-ci
+    docker:
+      - image: circleci/buildpack-deps:stretch
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker image
+          command: docker build -t $IMAGE_NAME:latest .
+workflows:
+  version: 2
+  build-master:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
